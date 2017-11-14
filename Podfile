@@ -43,6 +43,7 @@ pod 'SDWebImage'
 #pod 'IQKeyboardManager'
 #pod 'ZipArchive', '~> 1.4.0'
 #pod 'MXNavigationBarManager', '~> 1.1' // 管理导航栏 透明
+#pod 'YZTagList' //标签列表界面,用法比较简单，快速集成
 
 
 end

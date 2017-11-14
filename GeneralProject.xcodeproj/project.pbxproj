@@ -34,8 +34,6 @@
 		9349F7E91F260A7B00314F3A /* UIViewController+Swizzled.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349F7D51F260A7B00314F3A /* UIViewController+Swizzled.m */; };
 		9349F7EA1F260A7B00314F3A /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349F7D71F260A7B00314F3A /* UIViewController+Utils.m */; };
 		9349F7EB1F260A7B00314F3A /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9349F7D91F260A7B00314F3A /* UIWindow+Extension.m */; };
-		935BC8D71EC4979500401C22 /* YZTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 935BC8D41EC4979500401C22 /* YZTagButton.m */; };
-		935BC8D81EC4979500401C22 /* YZTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 935BC8D61EC4979500401C22 /* YZTagList.m */; };
 		935BC8DC1EC497A200401C22 /* BaseLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 935BC8DB1EC497A200401C22 /* BaseLayoutConstraint.m */; };
 		938241261EC0852A0014BF45 /* TipLoadingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 938241251EC0852A0014BF45 /* TipLoadingIndicatorView.m */; };
 		9382412C1EC08DF70014BF45 /* UIView+NetTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382412B1EC08DF70014BF45 /* UIView+NetTipsView.m */; };
@@ -125,10 +123,6 @@
 		9349F7D71F260A7B00314F3A /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
 		9349F7D81F260A7B00314F3A /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		9349F7D91F260A7B00314F3A /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
-		935BC8D31EC4979500401C22 /* YZTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZTagButton.h; sourceTree = "<group>"; };
-		935BC8D41EC4979500401C22 /* YZTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZTagButton.m; sourceTree = "<group>"; };
-		935BC8D51EC4979500401C22 /* YZTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZTagList.h; sourceTree = "<group>"; };
-		935BC8D61EC4979500401C22 /* YZTagList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZTagList.m; sourceTree = "<group>"; };
 		935BC8DA1EC497A200401C22 /* BaseLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayoutConstraint.h; sourceTree = "<group>"; };
 		935BC8DB1EC497A200401C22 /* BaseLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayoutConstraint.m; sourceTree = "<group>"; };
 		938241241EC0852A0014BF45 /* TipLoadingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipLoadingIndicatorView.h; sourceTree = "<group>"; };
@@ -320,7 +314,6 @@
 		9333CD3F1EB2DA4A004E902E /* External */ = {
 			isa = PBXGroup;
 			children = (
-				935BC8D21EC4979500401C22 /* YZTagList */,
 				939A4BA41EBDC1B7008F4A13 /* Alipay */,
 			);
 			path = External;
@@ -396,17 +389,6 @@
 				9349F7D91F260A7B00314F3A /* UIWindow+Extension.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		935BC8D21EC4979500401C22 /* YZTagList */ = {
-			isa = PBXGroup;
-			children = (
-				935BC8D31EC4979500401C22 /* YZTagButton.h */,
-				935BC8D41EC4979500401C22 /* YZTagButton.m */,
-				935BC8D51EC4979500401C22 /* YZTagList.h */,
-				935BC8D61EC4979500401C22 /* YZTagList.m */,
-			);
-			path = YZTagList;
 			sourceTree = "<group>";
 		};
 		935BC8D91EC497A200401C22 /* Layout */ = {
@@ -683,7 +665,6 @@
 				9333CD2E1EB2D85E004E902E /* ViewController.m in Sources */,
 				9349F7E01F260A7B00314F3A /* NSObject+Extension.m in Sources */,
 				932A063D1EBDD36B0051ACB6 /* CustomRefresh.m in Sources */,
-				935BC8D81EC4979500401C22 /* YZTagList.m in Sources */,
 				9349F7DD1F260A7B00314F3A /* NSData+Extension.m in Sources */,
 				935BC8DC1EC497A200401C22 /* BaseLayoutConstraint.m in Sources */,
 				9349F7E71F260A7B00314F3A /* UIViewController+CommonOperation.m in Sources */,
@@ -699,7 +680,6 @@
 				9349F7E41F260A7B00314F3A /* UINavigationBar+Awesome.m in Sources */,
 				9349F7DE1F260A7B00314F3A /* NSDictionary+Extension.m in Sources */,
 				939A4B751EBD7DB4008F4A13 /* BaseViewController.m in Sources */,
-				935BC8D71EC4979500401C22 /* YZTagButton.m in Sources */,
 				9349F7DB1F260A7B00314F3A /* NSArray+Extension.m in Sources */,
 				9333CD281EB2D85E004E902E /* main.m in Sources */,
 				9349F7E51F260A7B00314F3A /* UIView+Drawing.m in Sources */,
