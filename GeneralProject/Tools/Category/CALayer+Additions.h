@@ -2,7 +2,7 @@
 //  CALayer+Additions.h
 //  FtxBookViaPhone
 //  user defined runtime property 的时候会自动调用方法
-//  Created by 王滔 on 16/8/11.
+//  Created by Jone on 16/8/11.
 //  Copyright © 2016年 FTXJOY. All rights reserved.
 //
 

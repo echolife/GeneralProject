@@ -2,7 +2,7 @@
 //  UIViewController+CommonOperation.h
 //  FtxBookViaPhone
 //
-//  Created by 王滔 on 16/9/1.
+//  Created by Jone on 16/9/1.
 //  Copyright © 2016年 FTXJOY. All rights reserved.
 //
 

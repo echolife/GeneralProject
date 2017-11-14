@@ -2,7 +2,7 @@
 //  CustomRefresh.m
 //  FtxBookViaPhone
 //  根据需求 替换图片数组
-//  Created by 王滔 on 2017/4/25.
+//  Created by Jone on 2017/4/25.
 //  Copyright © 2017年 FTXJOY. All rights reserved.
 //
 

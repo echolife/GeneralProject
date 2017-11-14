@@ -2,7 +2,7 @@
 //  UIView+Drawing.m
 //  FtxBookViaPhone
 //
-//  Created by 王滔 on 16/8/19.
+//  Created by Jone on 16/8/19.
 //  Copyright © 2016年 FTXJOY. All rights reserved.
 //
 
