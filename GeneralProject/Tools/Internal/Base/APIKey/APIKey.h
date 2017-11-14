@@ -2,8 +2,8 @@
 //  APIKey.h
 //
 //
-//  Created by 王滔 on 15/10/12.
-//  Copyright © 2015年 王滔. All rights reserved.
+//  Created by Jone on 15/10/12.
+//  Copyright © 2015年 Jone. All rights reserved.
 //
 
 #ifndef APIKey_h

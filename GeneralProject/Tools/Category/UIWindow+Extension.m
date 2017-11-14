@@ -2,8 +2,8 @@
 //  UIWindow+Extension.m
 //  FtxBookViaPhone
 //
-//  Created by 王滔 on 15/12/17.
-//  Copyright © 2015年 王滔. All rights reserved.
+//  Created by Jone on 15/12/17.
+//  Copyright © 2015年 Jone. All rights reserved.
 //
 
 #import "UIWindow+Extension.h"
