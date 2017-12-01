@@ -93,7 +93,7 @@
  @param score 分数
  @return 控对象返回默认5分
  */
-- (UIImage *)fetchGradStartImgWith:(NSString *)score;
+- (UIImage *)fetchGradeStarImgWith:(NSString *)score;
 
 - (BOOL)deviceIsSuportFingerprint;
 

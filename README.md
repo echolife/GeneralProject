@@ -48,7 +48,6 @@
 2. CustomRefresh 根据[MJRefresh]()自定义刷新header
 
 > + `CustomRefresh` 通过播放多张图片进行动画
-
 > + `CustomeGifRefresh` 根据拖拽程度 使用`UIBezierPat`进行绘制动画
 
 3. FitScreen 根据屏幕尺寸 自动匹配相应的float
