@@ -87,13 +87,7 @@
 
 - (void)callNumber:(NSString *)number;
 
-/**
- 根据分数获取图片
- 
- @param score 分数
- @return 控对象返回默认5分
- */
-- (UIImage *)fetchGradeStarImgWith:(NSString *)score;
+
 
 - (BOOL)deviceIsSuportFingerprint;
 

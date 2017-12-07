@@ -64,7 +64,6 @@
 
 
 
-
 /*!
  *  @brief 毛玻璃效果
  *
@@ -76,7 +75,30 @@
 - (UIImage *)blurryWithBlurLevel:(CGFloat)blur;
 
 
+/**
+ *  获取启动图片 图片启动有效
+ */
++ (UIImage *)getLaunchImage;
 
 
+/**
+ 根据字符串创建二维码
+ @param string    二维码信息
+ @param size      图片大小
+ @param waterSize 水印大小
+ @return Img
+ */
++ (UIImage *)creatCIQRCodeImage:(NSString *)string imgSize:(CGFloat)size warterImg:(NSString *)waterImg waterSize:(CGFloat)waterSize;
+
+
+/**
+ *  根据CIImage生成指定大小的UIImage
+ *
+ *  @param image CIImage
+ *  @param size  图片宽度
+ *
+ *  @return 生成的高清的UIImage
+ */
++ (UIImage *)creatNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat)size warterImg:(NSString *)waterImg wateImgSize:(CGFloat)waterSize;
 
 @end

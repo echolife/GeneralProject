@@ -39,6 +39,16 @@ typedef NS_ENUM(NSUInteger, DateFormat) {
 
 + (NSString *)date:(NSDate *)date format:(DateFormat)format;
 
+/**
+ 返回安全字符串
+ 
+ @param string 需要验证的字符串
+ @return 安全的字符串
+ */
++ (NSString *)safeString:(NSString *)string;
+
++ (NSString *)jsonSerialaztionWithDic:(NSDictionary *)dic;
+
 
 - (BOOL)isNotEmpty;
 

@@ -69,6 +69,28 @@
     return dateStr;
 }
 
++ (NSString *)safeString:(NSString *)string {
+    if (string && string != nil) {
+        return string;
+    }
+    return @"";
+}
+
++ (NSString *)jsonSerialaztionWithDic:(NSDictionary *)dic {
+    if (dic) {
+        NSError *error;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&error];
+        if (error) {
+            NSLog(@"error：%@",error);
+            return @"";
+        } else {
+            return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        }
+    }
+    return @"";
+}
+
+
 - (BOOL)isNotEmpty {
     if (self != nil
         && ![self isKindOfClass:[NSNull class]]

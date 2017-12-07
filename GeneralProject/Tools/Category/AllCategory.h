@@ -29,5 +29,6 @@
 #import "UIViewController+Extension.h"
 #import "NSBundle+Extension.h"
 #import "UIButton+Extension.h"
+#import "NSURL+Extension.h"
 
 #endif /* AllCategory_h */

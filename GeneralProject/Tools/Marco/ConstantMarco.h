@@ -14,11 +14,6 @@
 
 //----------------------------设备信息------------------
 
-#define NAV_BAR_H 44
-
-#define NAV_STUBAR_H 20
-
-#define NAV_H 64
 
 #define kStatus_H [[UIApplication sharedApplication] statusBarFrame].size.height
 
@@ -34,6 +29,13 @@
 // ios 屏幕比例
 #define SCREEN_SCALE_IOS [UIScreen mainScreen].scale
 
+//----------------------------app信息------------------
+
+#define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+#define kAppBuild [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
+#define kAppName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 
 //-------------------打印日志----------------------------
 //重写NSLog,Debug模式下打印日志和当前行数
@@ -73,6 +75,7 @@
 #define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
 #define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+#define IS_IPHONE_X (IS_IPHONE && SCREEN_MAX_LENGTH == 812.0)
 #define IS_IPAD_BIG (IS_IPAD && SCREEN_MAX_LENGTH == 1366.0)  // 针对 2732*2048 的IPD
 
 //判断是真机还是模拟器
@@ -84,6 +87,14 @@
 //iPhone Simulator
 #endif
 
+
+//---------------------View------------
+//View圆角和加边框
+#define ViewBorderRadius(View,Radius,Width,Color)\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]]
 
 
 

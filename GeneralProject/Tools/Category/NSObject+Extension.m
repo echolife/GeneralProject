@@ -218,18 +218,6 @@
     [self openURL:[NSURL URLWithString:url]];
 }
 
-- (UIImage *)fetchGradeStarImgWith:(NSString *)score {
-    NSArray *scorePicArray = @[@"star_cmt_01", @"star_cmt_02", @"star_cmt_03", @"star_cmt_04", @"star_cmt_05", @"star_cmt_06", @"star_cmt_07", @"star_cmt_08", @"star_cmt_09", @"star_cmt_10", @"star_cmt_11"];
-    NSInteger grade = 5;
-    if (score.length) {
-        CGFloat scoreFloat = [score floatValue];
-        if (scoreFloat > 10.0) {
-            scoreFloat *= 0.1;
-        }
-        grade = (int)roundf(scoreFloat);
-    }
-    return [UIImage imageNamed:scorePicArray[grade]];;
-}
 
 - (BOOL)deviceIsSuportFingerprint {
     

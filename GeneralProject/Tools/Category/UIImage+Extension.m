@@ -389,6 +389,82 @@
     return returnImage;
 }
 
++(UIImage *)getLaunchImage{
+    CGSize viewSize = [UIApplication sharedApplication].keyWindow.bounds.size;
+    NSString *viewOrientation = @"Portrait";    //横屏请设置成 @"Landscape"
+    NSString *launchImage = @"";
+    NSArray *imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary *dict in imagesDict) {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]]) {
+            launchImage = dict[@"UILaunchImageName"];
+            break;
+        }
+    }
+    return [UIImage imageNamed:launchImage];
+}
 
++ (UIImage *)creatCIQRCodeImage:(NSString *)string imgSize:(CGFloat)size warterImg:(NSString *)waterImg waterSize:(CGFloat)waterSize {
+    // 创建过滤器， 参数固定
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    
+    // 恢复默认设置
+    [filter setDefaults];
+    
+    // 添加数据
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    [filter setValue:data forKey:@"inputMessage"];
+    
+    // 设置二维码纠错等级
+    [filter setValue:@"L" forKey:@"inputCorrectionLevel"];
+    
+    CIImage *outputImg = [filter outputImage];
+    
+    return [self creatNonInterpolatedUIImageFormCIImage:outputImg withSize:size warterImg:waterImg wateImgSize:waterSize];
+}
+
+
++ (UIImage *)creatNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat)size warterImg:(NSString *)waterImg wateImgSize:(CGFloat)waterSize {
+    CGRect extent = CGRectIntegral(image.extent);
+    CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
+    // 创建bitmap
+    size_t width = CGRectGetWidth(extent) * scale;
+    size_t height = CGRectGetHeight(extent) * scale;
+    
+    // 创建一个deviceGray 颜色空间
+    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
+    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef bitmapImage = [context createCGImage:image fromRect:extent];
+    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
+    CGContextScaleCTM(bitmapRef, scale, scale);
+    CGContextDrawImage(bitmapRef, extent, bitmapImage);
+    
+    // 保存bitmap图片
+    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+    CGContextRelease(bitmapRef);
+    CGImageRelease(bitmapImage);
+    CFRelease(cs);
+    
+    // 得到图片
+    UIImage *outImg = [UIImage imageWithCGImage:scaledImage];
+    CGImageRelease(scaledImage);
+    
+    // 添加水印
+    if (waterSize == 0) return outImg;
+    
+    UIGraphicsBeginImageContextWithOptions(outImg.size, NO, [UIScreen mainScreen].scale);
+    [outImg drawInRect:CGRectMake(0, 0, size, size)];
+    
+    // 水印图片
+    UIImage *waterImage = [UIImage imageNamed:waterImg];
+    
+    // 将水印画入二维码
+    [waterImage drawInRect:CGRectMake(size - waterSize / 2, size - waterSize / 2, waterSize, waterSize)];
+    UIImage *newOutputImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newOutputImg;
+}
 
 @end

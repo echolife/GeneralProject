@@ -35,7 +35,7 @@ pod 'SDWebImage'
 #pod 'SDCycleScrollView' #广告无线轮播
 #pod 'EAIntroView' #启动引导图
 #pod 'iCarousel' #旋转木马
-#pod 'HMSegmentedControl'
+pod 'HMSegmentedControl'
 #pod 'TMCache' #缓存
 #pod 'SMPageControl', '~> 1.2'
 #pod 'CocoaHTTPServer'
