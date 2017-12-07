@@ -93,4 +93,21 @@
 
 - (NSInteger)numberWithHexString:(NSString *)hexString;
 
+/*注册成为指定消息的观察者*/
+- (void)observeNotificaiton:(NSString *)name;
+
+- (void)observeNotificaiton:(NSString *)name selector:(SEL)selector;
+
+- (void)unobserveNotification:(NSString *)name;
+
+- (void)unobserveAllNotification;
+
+- (void)postNotification:(NSString *)name;
+
+- (void)postNotification:(NSString *)name object:(id)object;
+
+- (void)postNotification:(NSString *)name userInfo:(NSDictionary *)userInfo;
+
+- (void)postNotification:(NSString *)name object:(id)object userInfo:(NSDictionary *)userInfo;
+
 @end

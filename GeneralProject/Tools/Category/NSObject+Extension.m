@@ -244,4 +244,54 @@
     return (NSInteger)hexNumber;
 }
 
+- (void)observeNotificaiton:(NSString *)name {
+    [self observeNotificaiton:name selector:@selector(handleNotification:)];
+}
+
+- (void)observeNotificaiton:(NSString *)name selector:(SEL)selector {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:name object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:selector
+                                                 name:name
+                                               object:nil];
+}
+
+- (void)unobserveNotification:(NSString *)name {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:name
+                                                  object:nil];
+}
+
+- (void)unobserveAllNotification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)postNotification:(NSString *)name {
+    [self postNotification:name object:nil];
+}
+- (void)postNotification:(NSString *)name object:(id)object {
+    [[NSNotificationCenter defaultCenter] postNotificationName:name object:object];
+}
+
+- (void)postNotification:(NSString *)name userInfo:(NSDictionary *)userInfo {
+    [self postNotification:name object:nil userInfo:userInfo];
+}
+
+- (void)postNotification:(NSString *)name object:(id)object userInfo:(NSDictionary *)userInfo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:name
+                                                        object:object
+                                                      userInfo:userInfo];
+}
+
+
+- (void)handleNotification:(NSNotification *)noti {
+    if ([self respondsToSelector:@selector(handleNotification:object:userInfo:)]) {
+        [self handleNotification:noti.name object:noti.object userInfo:noti.userInfo];
+    }
+}
+
+- (void)handleNotification:(NSString *)name object:(id)object userInfo:(NSDictionary *)userInfo {
+    
+}
+
 @end
