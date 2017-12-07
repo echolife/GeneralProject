@@ -39,6 +39,7 @@
 		9382412C1EC08DF70014BF45 /* UIView+NetTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9382412B1EC08DF70014BF45 /* UIView+NetTipsView.m */; };
 		938912C61EC85816009E2845 /* BaseParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 938912C51EC85816009E2845 /* BaseParameters.m */; };
 		939236BB1F4BCF37002F91A0 /* CustomGifRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 939236BA1F4BCF37002F91A0 /* CustomGifRefresh.m */; };
+		939520C81FD91B5A00212FC1 /* NSURL+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 939520C71FD91B5A00212FC1 /* NSURL+Extension.m */; };
 		939A4B751EBD7DB4008F4A13 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A4B741EBD7DB4008F4A13 /* BaseViewController.m */; };
 		939A4B881EBDAEF2008F4A13 /* GeneralSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 939A4B871EBDAEF2008F4A13 /* GeneralSource.bundle */; };
 		939A4B8E1EBDB29E008F4A13 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A4B8D1EBDB29E008F4A13 /* BaseTableViewCell.m */; };
@@ -133,6 +134,8 @@
 		938912C51EC85816009E2845 /* BaseParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseParameters.m; sourceTree = "<group>"; };
 		939236B91F4BCF37002F91A0 /* CustomGifRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGifRefresh.h; sourceTree = "<group>"; };
 		939236BA1F4BCF37002F91A0 /* CustomGifRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGifRefresh.m; sourceTree = "<group>"; };
+		939520C61FD91B5A00212FC1 /* NSURL+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Extension.h"; sourceTree = "<group>"; };
+		939520C71FD91B5A00212FC1 /* NSURL+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Extension.m"; sourceTree = "<group>"; };
 		939A4B731EBD7DB4008F4A13 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		939A4B741EBD7DB4008F4A13 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		939A4B761EBD8083008F4A13 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 		9349F7B41F260A7B00314F3A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				939520C61FD91B5A00212FC1 /* NSURL+Extension.h */,
+				939520C71FD91B5A00212FC1 /* NSURL+Extension.m */,
 				9349F7B51F260A7B00314F3A /* AllCategory.h */,
 				9313E3531F3414B6008ECEF3 /* UIButton+Extension.h */,
 				9313E3541F3414B6008ECEF3 /* UIButton+Extension.m */,
@@ -672,6 +677,7 @@
 				938912C61EC85816009E2845 /* BaseParameters.m in Sources */,
 				9349F7EB1F260A7B00314F3A /* UIWindow+Extension.m in Sources */,
 				9349F7E61F260A7B00314F3A /* UIView+Extension.m in Sources */,
+				939520C81FD91B5A00212FC1 /* NSURL+Extension.m in Sources */,
 				939236BB1F4BCF37002F91A0 /* CustomGifRefresh.m in Sources */,
 				932A06401EBDD48C0051ACB6 /* TipsView.m in Sources */,
 				9349F7DA1F260A7B00314F3A /* CALayer+Additions.m in Sources */,
