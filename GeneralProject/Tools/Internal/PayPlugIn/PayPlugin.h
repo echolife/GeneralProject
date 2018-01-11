@@ -1,5 +1,5 @@
 //
-//  PayPlugIn.h
+//  PayPlugin.h
 //  GeneralProject
 //
 //  Created by Jone on 2017/5/6.
@@ -16,9 +16,9 @@ typedef NS_ENUM(NSUInteger, Payment) {
 
 typedef void (^PayResult)(Payment payment, NSError *error);
 
-@interface PayPlugIn : NSObject<WXApiDelegate>
+@interface PayPlugin : NSObject<WXApiDelegate>
 
-SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(PayPlugIn)
+SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(PayPlugin)
 
 //---------支付宝本地签名使用-----------
 @property (nonatomic, copy)  NSString *sn;//订单号

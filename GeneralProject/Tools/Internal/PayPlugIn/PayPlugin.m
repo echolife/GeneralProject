@@ -1,22 +1,22 @@
 //
-//  PayPlugIn.m
+//  PayPlugin.m
 //  GeneralProject
 //
 //  Created by Jone on 2017/5/6.
 //  Copyright © 2017年 Jone. All rights reserved.
 //
 
-#import "PayPlugIn.h"
+#import "PayPlugin.h"
 
-@interface PayPlugIn ()
+@interface PayPlugin ()
 
 @property (copy, nonatomic) PayResult payResult;
 
 @end
 
-@implementation PayPlugIn
+@implementation PayPlugin
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(PayPlugIn)
+SYNTHESIZE_SINGLETON_FOR_CLASS(PayPlugin)
 
 - (void)payWihtPayment:(Payment)payment payResult:(PayResult)payresult {
     _payResult = payresult;
@@ -48,17 +48,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PayPlugIn)
     
     
     NSMutableDictionary *signDic = [NSMutableDictionary dictionary];
-    [signDic setObject:self.partnerId forKey:@"partnerId"];
-    [signDic setObject:self.prepayId forKey:@"prepayId"];
-    [signDic setObject:self.nonceStr forKey:@"nonceStr"];
+    [signDic setObject:self.partnerId forKey:@"partnerid"];
+    [signDic setObject:self.prepayId forKey:@"prepayid"];
+    [signDic setObject:self.nonceStr forKey:@"noncestr"];
     [signDic setObject:self.package forKey:@"package"];
     [signDic setObject:self.appId forKey:@"appid"];
-    [signDic setObject:[NSString stringWithFormat:@"%u",(unsigned int)self.timeStamp] forKey:@"timeStamp"];
+    [signDic setObject:[NSString stringWithFormat:@"%u",(unsigned int)self.timeStamp] forKey:@"timestamp"];
     
     NSString *signStr  = [self createMd5SignWithDic:signDic];
     
     PayReq *req = [[PayReq alloc] init];
-    req.openID = self.openID;
+    req.openID = self.appId;
     req.partnerId = self.partnerId;
     req.prepayId = self.prepayId;
     req.nonceStr = self.nonceStr;

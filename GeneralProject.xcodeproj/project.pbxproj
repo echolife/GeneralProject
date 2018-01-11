@@ -46,7 +46,7 @@
 		939A4B8E1EBDB29E008F4A13 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A4B8D1EBDB29E008F4A13 /* BaseTableViewCell.m */; };
 		939A4B911EBDB2E9008F4A13 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A4B901EBDB2E9008F4A13 /* BaseCollectionViewCell.m */; };
 		939A4B941EBDB332008F4A13 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A4B931EBDB332008F4A13 /* BaseView.m */; };
-		939A4B9A1EBDB8CA008F4A13 /* PayPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A4B991EBDB8CA008F4A13 /* PayPlugIn.m */; };
+		939A4B9A1EBDB8CA008F4A13 /* PayPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 939A4B991EBDB8CA008F4A13 /* PayPlugin.m */; };
 		939A4BA71EBDC1B7008F4A13 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 939A4BA51EBDC1B7008F4A13 /* AlipaySDK.bundle */; };
 		939A4BA81EBDC1B7008F4A13 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939A4BA61EBDC1B7008F4A13 /* AlipaySDK.framework */; };
 		939A4BBD1EBDCAF2008F4A13 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 939A4BA01EBDC158008F4A13 /* libc++.tbd */; };
@@ -151,8 +151,8 @@
 		939A4B921EBDB332008F4A13 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		939A4B931EBDB332008F4A13 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		939A4B961EBDB54F008F4A13 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
-		939A4B981EBDB8CA008F4A13 /* PayPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPlugIn.h; sourceTree = "<group>"; };
-		939A4B991EBDB8CA008F4A13 /* PayPlugIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPlugIn.m; sourceTree = "<group>"; };
+		939A4B981EBDB8CA008F4A13 /* PayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPlugin.h; sourceTree = "<group>"; };
+		939A4B991EBDB8CA008F4A13 /* PayPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPlugin.m; sourceTree = "<group>"; };
 		939A4BA01EBDC158008F4A13 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		939A4BA21EBDC16A008F4A13 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		939A4BA51EBDC1B7008F4A13 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -444,8 +444,8 @@
 		939A4B971EBDB8B5008F4A13 /* PayPlugIn */ = {
 			isa = PBXGroup;
 			children = (
-				939A4B981EBDB8CA008F4A13 /* PayPlugIn.h */,
-				939A4B991EBDB8CA008F4A13 /* PayPlugIn.m */,
+				939A4B981EBDB8CA008F4A13 /* PayPlugin.h */,
+				939A4B991EBDB8CA008F4A13 /* PayPlugin.m */,
 			);
 			path = PayPlugIn;
 			sourceTree = "<group>";
@@ -712,7 +712,7 @@
 				9349F7E91F260A7B00314F3A /* UIViewController+Swizzled.m in Sources */,
 				9349F7E31F260A7B00314F3A /* UIImage+Extension.m in Sources */,
 				9313E3551F3414B6008ECEF3 /* UIButton+Extension.m in Sources */,
-				939A4B9A1EBDB8CA008F4A13 /* PayPlugIn.m in Sources */,
+				939A4B9A1EBDB8CA008F4A13 /* PayPlugin.m in Sources */,
 				9349F7DF1F260A7B00314F3A /* NSNull+Extension.m in Sources */,
 				939A4B911EBDB2E9008F4A13 /* BaseCollectionViewCell.m in Sources */,
 				9349F7DC1F260A7B00314F3A /* NSBundle+Extension.m in Sources */,
@@ -848,7 +848,6 @@
 				DEVELOPMENT_TEAM = GR75HN2SQH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/GeneralProject/Tools/Internal/PayPlugIn/Alipay",
 					"$(PROJECT_DIR)/GeneralProject/Tools/External/Alipay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -870,7 +869,6 @@
 				DEVELOPMENT_TEAM = GR75HN2SQH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/GeneralProject/Tools/Internal/PayPlugIn/Alipay",
 					"$(PROJECT_DIR)/GeneralProject/Tools/External/Alipay",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
