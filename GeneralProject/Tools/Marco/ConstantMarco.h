@@ -87,6 +87,8 @@
 //iPhone Simulator
 #endif
 
+#define AppDidEnterBackgroundNotification @"AppDidEnterBackgroundNotification"
+#define AppWillEnterForegroundNotification @"AppWillEnterForegroundNotification"
 
 //---------------------View------------
 //View圆角和加边框
