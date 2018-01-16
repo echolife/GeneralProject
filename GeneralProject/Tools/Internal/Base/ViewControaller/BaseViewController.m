@@ -140,10 +140,8 @@
 }
 
 
-- (void)noMoreData {
+-(void)haveMoreData:(BOOL)have {
     [self endRefreshData];
-    //    _tableView.showsInfiniteScrolling = NO;
-    
 }
 
 - (void)interfaceAssignValue {

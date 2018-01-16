@@ -35,6 +35,6 @@
 - (void)endRefreshData;
 - (void)refreshData;
 - (void)infiniteData;
-- (void)noMoreData;
+- (void)haveMoreData:(BOOL)have;
 - (void)interfaceAssignValue;
 @end

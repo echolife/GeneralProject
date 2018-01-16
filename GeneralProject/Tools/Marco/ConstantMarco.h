@@ -90,6 +90,9 @@
 #define AppDidEnterBackgroundNotification @"AppDidEnterBackgroundNotification"
 #define AppWillEnterForegroundNotification @"AppWillEnterForegroundNotification"
 
+#define weak_self(A_Self)  __weak typeof(self) weakSelf = a_self;
+
+
 //---------------------View------------
 //View圆角和加边框
 #define ViewBorderRadius(View,Radius,Width,Color)\

@@ -11,8 +11,8 @@
 @implementation UIViewController (CommonOperation)
 
 - (void)jumpToLogin {
-    UIStoryboard *stroyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *loginPage = [stroyboard instantiateViewControllerWithIdentifier:@"FTXLoginAndRegisterPage"];
+    UIStoryboard *stroyboard = [UIStoryboard storyboardWithName:kStroyboardName bundle:[NSBundle mainBundle]];
+    UIViewController *loginPage = [stroyboard instantiateViewControllerWithIdentifier:kLoginClass];
     [self.navigationController pushViewController:loginPage animated:YES];
 }
 

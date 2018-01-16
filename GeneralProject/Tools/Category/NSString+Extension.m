@@ -11,13 +11,7 @@
 #import <GTMBase64/GTMBase64.h>
 
 
-//密匙 key
-#define gkey            @"Kyle_Chu"
-//偏移量
-#define gIv             @"jukai"
-
 @implementation NSString (Extension)
-
 
 + (NSString *)fromInt:(int)value {
     return [NSString stringWithFormat:@"%d", value];
