@@ -130,29 +130,35 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PayPlugin)
 - (void)alipayPay {
     NSString *orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"", self.AlipayData, self.AlipaySignData, @"RSA"];
     
-    Weak_Self(self);
+    weak_self(self);
     [[AlipaySDK defaultService] payOrder:orderString fromScheme:AlipayScheme callback: ^(NSDictionary *resultDic) {
         
         NSLog(@"支付宝信息->%@",resultDic);
         
-        NSString *statuCode = resultDic[@"resultStatus"];
-        
-        if ([statuCode isEqualToString:@"9000"]) {
-            if (weakSelf.payResult) {
-                weakSelf.payResult(PaymentApipay, nil);
-            }
-        }else if([statuCode isEqualToString:@"6001"]){
-            NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:[statuCode integerValue] userInfo:@{NSLocalizedFailureReasonErrorKey:@"支付宝支付失败,用户取消支付"}];
-            if (weakSelf.payResult) {
-                weakSelf.payResult(PaymentApipay, error);
-            }
-        } else{
-            NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:[statuCode integerValue] userInfo:@{NSLocalizedFailureReasonErrorKey:@"支付宝支付失败"}];
-            if (weakSelf.payResult) {
-                weakSelf.payResult(PaymentApipay, error);
-            }
-        }
+        [weakSelf dispatchAlipayPayResult:resultDic];
     }];
+}
+
+- (void)dispatchAlipayPayResult:(NSDictionary *)resultDic {
+    NSLog(@"支付宝信息->%@",resultDic);
+    
+    NSString *statuCode = resultDic[@"resultStatus"];
+    
+    if ([statuCode isEqualToString:@"9000"]) {
+        if (_payResult) {
+            _payResult(PaymentApipay, nil);
+        }
+    }else if([statuCode isEqualToString:@"6001"]){
+        NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:[statuCode integerValue] userInfo:@{NSLocalizedFailureReasonErrorKey:@"支付宝支付失败,用户取消支付"}];
+        if (_payResult) {
+            _payResult(PaymentApipay, error);
+        }
+    } else{
+        NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:[statuCode integerValue] userInfo:@{NSLocalizedFailureReasonErrorKey:@"支付宝支付失败"}];
+        if (_payResult) {
+            _payResult(PaymentApipay, error);
+        }
+    }
 }
 
 @end

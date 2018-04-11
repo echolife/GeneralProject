@@ -90,7 +90,7 @@
 #define AppDidEnterBackgroundNotification @"AppDidEnterBackgroundNotification"
 #define AppWillEnterForegroundNotification @"AppWillEnterForegroundNotification"
 
-#define weak_self(A_Self)  __weak typeof(self) weakSelf = a_self;
+#define weak_self(A_Self)  __weak typeof(self) weakSelf = A_Self;
 
 
 //---------------------View------------

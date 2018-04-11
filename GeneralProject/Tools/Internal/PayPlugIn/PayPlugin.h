@@ -53,4 +53,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(PayPlugin)
 
 - (void)payWihtPayment:(Payment)payment payResult:(PayResult)payresult;
 
+- (void)dispatchAlipayPayResult:(NSDictionary *)resultDic;
+
+
 @end
