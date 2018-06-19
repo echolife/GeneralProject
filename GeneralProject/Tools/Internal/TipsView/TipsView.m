@@ -204,7 +204,7 @@
 
     [[view viewWithTag:kTipsViewTag + 2] removeFromSuperview];
     
-    UIView *backView = [[UIView alloc] initWithFrame:view.frame];
+    UIView *backView = [[UIView alloc] initWithFrame:view.bounds];
     backView.backgroundColor = [UIColor clearColor];
     backView.tag = kTipsViewTag + 2;
     [view addSubview:backView];

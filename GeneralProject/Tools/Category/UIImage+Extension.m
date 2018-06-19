@@ -142,7 +142,7 @@
             grade = (int)floorf(scoreFloat);
         }
     }
-    return [UIImage imageNamed:scorePicArray[10 - grade]];;
+    return [UIImage imageNamed:scorePicArray[10 - grade]];
 }
 
 + (UIImage *)cutCenterImage:(UIImage *)image size:(CGSize)size{
